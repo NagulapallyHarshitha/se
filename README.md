@@ -40,12 +40,17 @@ pipeline {
 
 
 
-
-# Docker-Compose Commands
-docker compose up -d
-docker compose ps
-docker compose logs
-docker compose stop
-docker compose down
-docker compose up --build -d
+sudo apt update
+sudo apt-get install docker.io
+sudo apt install git
+sudo apt install nano
+need to keep github url of aws
+git clone url
+ls
+cd aws
+nano Dockerfile
+FROM nginx:alpine
+COPY . /usr/share/nginx/html
+sudo docker build -t mywebapp .
+sudo docker run -d -p 80:80 mywebapp
 
